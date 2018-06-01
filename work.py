@@ -319,6 +319,7 @@ def testDeltaUuniform():
     listItem=GoosensCreation()
     listCounter6=getCorrectListDelta(listItem)
     listItem=[]
+    fig = plt.figure(figsize=(6, 4.4))
     for i in range(0,26):
         listItem.append(i/25.0)
     plt.plot(listItem, listCounter, c="red", label="Uuniform")
@@ -329,8 +330,10 @@ def testDeltaUuniform():
     plt.plot(listItem, listCounter6, c="black", label="Goosens and Macq")
     plt.xlabel('δ', fontsize=12)
     plt.legend(["Uuniform", "UuniFast", "UuniFastDiscard", "Stafford",
-               "Ripoll et Al", "Goosens and Macq"])
+               "Ripoll et Al", "Goosens and Macq"], bbox_to_anchor=(0., 1.02, 1., .102), loc=3,
+           ncol=3, mode="expand", borderaxespad=0.)
     plt.ylabel('number of sets', fontsize=12)
+    fig.savefig('samplefigure', bbox_inches='tight')
     plt.show()
         
 
